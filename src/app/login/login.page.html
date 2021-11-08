@@ -1,0 +1,29 @@
+<ion-content>
+  <div login-form>
+    <ion-grid>
+      <div style="margin-top: 20%" padding>
+        <ion-label class="usernamelbl"> Username</ion-label>
+      </div>
+      <ion-item lines="none">
+        <ion-input
+          class="inputCss"
+          type="text"
+          name="username"
+          [(ngModel)]="registerCredentials.username"
+          required
+          autocomplete="off"
+        ></ion-input>
+      </ion-item>
+    </ion-grid>
+  </div>
+  <br />
+  <div class="loginBtn">
+    <ion-button type="submit" (click)="logintoApp()"> Login </ion-button>
+  </div>
+
+  <div class="loginBtn">
+    <ion-col>
+      <a text-underline class="newuserLink">Create New User</a>
+    </ion-col>
+  </div>
+</ion-content>
