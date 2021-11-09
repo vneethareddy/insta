@@ -26,7 +26,7 @@ export class RestApiService {
   // HttpClient API get() method => Fetch User Info
   getUserInfo(): Observable<any> {
     return this.http
-      .get<any>(this.apiURL)
+      .get<any>(this.apiURL + '/api')
       .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -40,7 +40,7 @@ export class RestApiService {
   // HttpClient API get() method => Fetch Feed  List
   getFeedList(): Observable<any> {
     return this.http
-      .get<any>(this.apiURL + '/anys/')
+      .get<any>('https://randomuser.me/api/?page=1&results=2&seed=feed')
       .pipe(retry(1), catchError(this.handleError));
   }
 

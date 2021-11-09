@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-displaypost',
@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./displaypost.component.scss'],
 })
 export class DisplaypostComponent implements OnInit {
+  @Input() userName: string;
+  @Input() userPic: string;
+  @Input() userPosts: any;
+  @Input() userInfo: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }
