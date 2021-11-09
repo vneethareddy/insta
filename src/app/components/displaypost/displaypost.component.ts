@@ -10,6 +10,7 @@ export class DisplaypostComponent implements OnInit {
   @Input() userPic: string;
   @Input() userPosts: any;
   @Input() userInfo: any;
+  @Input() picPosts: any;
 
   constructor() {}
 

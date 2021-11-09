@@ -8,12 +8,19 @@ import { RestApiService } from '../services/commonHttpHandler';
 })
 export class FeedPage implements OnInit {
   postList: any;
+  picturesList: any;
   userInfo: any;
   userName: string;
   constructor(private restAPI: RestApiService) {}
 
   ngOnInit() {
-    this.restAPI.getUserInfo().subscribe((data: {}) => {
+    this.getUserInfo();
+    this.getUFeedData();
+    this.getPictures();
+  }
+
+  async getUserInfo() {
+    await this.restAPI.getUserInfo().subscribe((data: {}) => {
       this.userInfo = data;
       this.userName =
         this.userInfo.results[0].name.title +
@@ -22,11 +29,15 @@ export class FeedPage implements OnInit {
         ' ' +
         this.userInfo.results[0].name.last;
     });
-
-    this.restAPI.getFeedList().subscribe((data: {}) => {
-      console.log('data', data);
-      this.postList = data;
-      console.log('data', this.postList);
+  }
+  async getUFeedData() {
+    await this.restAPI.getFeedList().subscribe((feedData: {}) => {
+      this.postList = feedData;
+    });
+  }
+  async getPictures() {
+    await this.restAPI.getPictures().subscribe((picData: {}) => {
+      this.picturesList = picData;
     });
   }
 }
