@@ -1,8 +1,8 @@
-<div>
-  <img class="cssClass" src="{{ userPic }}" class="thumbnailCss" />
-  <ion-label> {{ userName }}</ion-label>
-</div>
 <ion-list *ngFor="let item of userPosts?.results">
+  <div>
+    <img class="cssClass" src="{{ userPic }}" class="thumbnailCss" />
+    <ion-label> {{ userName }}</ion-label>
+  </div>
   <ion-label> lorem ipsum </ion-label>
   <ion-item padding lines="none">
     <app-display-img [imgsrc]="item.picture.large"></app-display-img>
