@@ -1,16 +1,21 @@
 <ion-list *ngFor="let item of picPosts">
-  <div>
-    <img class="cssClass" src="{{ userPic }}" class="thumbnailCss" />
-    <ion-label> {{ userName }}</ion-label>
+  <div class="post-header">
+    <img class="cssClass post-image" src="{{ userPic }}" class="thumbnailCss" />
+    <div class="post-title">
+      <ion-label class="post-title-text"> {{ userName }}</ion-label>
+      <ion-label class="post-title-sub-text"> lorem ipsum </ion-label>
+    </div>
+    <ion-icon name="ellipsis-horizontal" class="triple-dot"></ion-icon>
   </div>
-  <ion-label> lorem ipsum </ion-label>
+
   <ion-item padding lines="none">
     <app-display-img [imgsrc]="item.download_url"></app-display-img>
   </ion-item>
 
-  <ion-row>
-    <ion-icon name="heart-outline" class="iconCss"></ion-icon>
-    <ion-icon name="chatbubble-outline" class="iconCss"></ion-icon>
-    <ion-icon name="share-social-outline" class="iconCss"></ion-icon>
+  <ion-row class="post-footer">
+    <ion-icon name="heart-outline" class="iconCss post-icon"></ion-icon>
+    <ion-icon name="chatbubble-outline" class="iconCss rotate-90 post-icon"></ion-icon>
+    <ion-icon name="share-social-outline" class="iconCss post-icon"></ion-icon>
+    <ion-icon name="bookmark-outline" class="iconCss post-icon last-icon"></ion-icon>
   </ion-row>
 </ion-list>
